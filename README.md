@@ -1,0 +1,4 @@
+Typer
+=====
+
+Basic javascript typewriter
