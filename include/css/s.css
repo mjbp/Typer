@@ -1,0 +1,27 @@
+*{margin:0;padding:0;box-sizing:border-box;}
+h1 {font-size:18px;margin-bottom:1.5em}
+html{font:15px/22px "Courier New",Courier,monospace;background:#000;color:#fefefe;padding:15%}
+body {height:100%;position:relative;background:#000;}
+#copy {color:#000;}
+p {margin-bottom:1.5em}
+#blink {font-size:15px}
+@-webkit-keyframes blink {
+	0%, 100% {opacity: 1;}
+	50% {opacity: 0;}
+}
+@-moz-keyframes blink {
+	0%, 100% {opacity: 1;}
+	50% {opacity: 0;}
+}
+@-o-keyframes blink {
+	0%, 100% {opacity: 1;}
+	50% {opacity: 0;}
+}
+@keyframes blink {
+	0%, 100% {opacity: 1;}
+	50% {opacity: 0;}
+}
+#blink {-webkit-animation: blink .75s infinite;
+		   -moz-animation: blink .75s infinite;
+		     -o-animation: blink .75s infinite;
+			    animation: blink .75s infinite;}

@@ -1,92 +1,22 @@
 <!DOCTYPE html>
-<html lang=en>
+<html lang="en">
 <head>
-  <meta charset=utf-8>
+  <meta charset="utf-8">
   <title>Typer</title>
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box;}
-	html{font:15px/22px "Courier New",Courier,monospace;background:#000;color:#fefefe;padding:15%}
-	body {height:100%;position:relative;background:#000;}
-	#copy {color:#000;}
-	p {margin-bottom:1.5em}
-	@-webkit-keyframes blink {
-		0%, 100% {opacity: 1;}
-		50% {opacity: 0;}
-	}
-	@-moz-keyframes blink {
-		0%, 50%, 100% {opacity: 1;}
-		50% {opacity: 0;}
-	}
-	@-o-keyframes blink {
-		0%, 50%, 100% {opacity: 1;}
-		50% {opacity: 0;}
-	}
-	@keyframes blink {
-		0%, 50%, 100% {opacity: 1;}
-		50% {opacity: 0;}
-	}
-	#blink {-webkit-animation: blink .75s infinite;
-			   -moz-animation: blink .75s infinite;
-			     -o-animation: blink .75s infinite;
-				    animation: flash .75s infinite;}
-  </style>
+  <link href="include/css/s.css" rel="stylesheet">
  </head>
  <body>
  <div id="copy">
+	<h1>Title</h1>
 	<p>Kenya's David Rudisha stormed to 800m gold in a world record time at London 2012 to cap four years of dominance of the two-lap event.</p>
 	<p>The 23-year-old world champion scorched around the Olympic Stadium in 1min 40.91sec to beat the record of 1.41.01 he set in 2010.</p>
 	<p>Nijel Amos of Botswana won silver in 1.41.73, while bronze went to Timothy Kitum of Kenya in 1.42.53, both athletes running personal bests.</p>
-	<p>Rudisha followed his father Daniel, who won a silver in the 4x400m relay in Mexico in 1968, as a Games medallist but is the first Olympic champion from his Maasai tribe.</p>
- </div>
-  <script>
-	(function(d,w){
-		"use strict";
-		var suffix = "<span id='blink'>_</span>",
-			text = d.querySelector('#copy'),
-			paragraphs = text.children,
-			paper = d.createElement("div"),
-			i = 0,
-			j = 0,
-			animate,
-			p,
-			addParagraph = function(){
-				p = d.createElement("p");
-				paper.appendChild(p);
-			},
-			addLetter = function(){
-				//log(i + ": " + j);
-				p.innerHTML = paragraphs[i].innerHTML.substr(0, j) + suffix; 
-			},
-			write = function(){
-				clearInterval(animate);
-				if(i<paragraphs.length){
-					if(j<=paragraphs[i].innerHTML.length){
-						addLetter(); 
-						++j;
-						animate = setInterval(write, 100);
-					}else{
-						++i;
-						if(paragraphs[i]){
-							p.removeChild(p.querySelector('#blink'));
-							j = 0;
-							addParagraph();
-							addLetter();
-							animate = setInterval(write, 500);
-						}
-					}
-				}
-			};
-		
-		
-		d.body.insertBefore(paper,text);
-		text.parentNode.removeChild(text);
-		addParagraph();
-		p.innerHTML = suffix;
-		
-		animate = setInterval(write, 1000);
-		
-	})(document,window);
-  </script>
+	<p>Rudisha followed his father Daniel, who won a silver in the 4x400m relay in Mexico in 1968, as a Games medallist but is the first Olympic champion from his Maasai tribe.</p></div>
+ <script src="include/js/typer.js"></script>
+ <script>
+	document.ready = function(a){
+		window.addEventListener ? window.addEventListener('load',a,false) : window.attachEvent('onload',a);
+	}.call(Typer.init('copy'));
+ </script>
  </body>
- 
  </html>
